@@ -36,7 +36,7 @@ Instructions:
     /*
     This code needs to get wrapped in a Promise!
      */
-    return new Promise(resolve, reject)
+    return new Promise(function(resolve, reject) {
     var req = new XMLHttpRequest();
     req.open('GET', url);
     req.onload = function() {
@@ -56,7 +56,7 @@ Instructions:
       // Pass a 'Network Error' to reject
     };
     req.send();
-  }
+  })
 
   window.addEventListener('WebComponentsReady', function() {
     home = document.querySelector('section[data-route="home"]');
